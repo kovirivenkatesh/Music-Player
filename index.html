@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Music Player</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="music-player">
+      <nav>
+        <div class="circle"><i class="fa-solid fa-angle-left"></i></div>
+        <div class="circle" onclick="toggleOverlay()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+
+      <!-- Floating Overlay (tabs are fixed; content scrolls) -->
+      <div id="overlay" class="overlay hidden">
+        <!-- Fixed tab bar inside overlay -->
+        <div class="overlay-tabs">
+          <button id="tabPlaylist" class="tab active">Playlist</button>
+          <button id="tabAlbums" class="tab">Albums</button>
+          <button class="overlay-close" title="Close" onclick="toggleOverlay()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Scrollable overlay content -->
+        <div class="overlay-content">
+          <!-- PLAYLIST (all songs) -->
+          <section id="sectionPlaylist">
+            <ul id="allSongs" class="list"></ul>
+          </section>
+
+          <!-- ALBUMS -->
+          <section id="sectionAlbums" class="hidden">
+            <div id="albums" class="albums-grid"></div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Player UI -->
+      <img src="thumbnail.png" class="song-img" id="songImg" alt="Cover" />
+      <h1 id="title">Firestorm</h1>
+      <p id="artist">Sujeeth | Thaman S</p>
+
+      <audio id="song"></audio>
+      <input type="range" value="0" id="progress" />
+
+      <div class="controls">
+        <div onclick="prevSong()"><i class="fa-solid fa-backward"></i></div>
+        <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+        <div onclick="nextSong()"><i class="fa-solid fa-forward"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
