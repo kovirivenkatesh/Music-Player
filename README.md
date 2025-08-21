@@ -18,4 +18,4 @@ It allows you to play songs from your **playlist** or browse them by **albums** 
 ---
 
 ## 🚀 Live Demo
-[Click here to try the Music Player](https://github.com/kovirivenkatesh/Music-Player/settings/pages)
+[Click here to try the Music Player](https://kovirivenkatesh.github.io/Music-Player/)
